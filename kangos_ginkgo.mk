@@ -20,13 +20,22 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 
+# Inherit some common KangOS stuff
+$(call inherit-product, vendor/kangos/config/common.mk)
+
 # Inherit from ginkgo device
 $(call inherit-product, device/xiaomi/ginkgo/device.mk)
 
-# Inherit some common KangOS stuff
+#Google Dialer
+TARGET_INCLUDE_AOSP_REPLACEMENT := true
+
+Some KangOS stuff
 TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_INCLUDE_PIXEL_CHARGER := true
-$(call inherit-product, vendor/kangos/config/common.mk)
+KANGOS_MAINTAINER := zSnowDark(@DefaultioX)
+KANGOS_BUILD_TYPE=gapps
+KANGOS_BUILDTYPE := OFFICIAL
+
 
 # Device identifier
 PRODUCT_NAME := kangos_ginkgo
@@ -35,4 +44,7 @@ PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi Note 8
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
-DEVICE_MAINTAINER := zSnowDark
+
+RODUCT_PRODUCT_PROPERTIES += \
+  ro.kangos.maintainer=zSnowDark \
+  ro.kangos.cpu=SDM665

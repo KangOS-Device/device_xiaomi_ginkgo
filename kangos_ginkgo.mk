@@ -26,10 +26,10 @@ $(call inherit-product, vendor/kangos/config/common.mk)
 # Inherit from ginkgo device
 $(call inherit-product, device/xiaomi/ginkgo/device.mk)
 
-#Google Dialer
+# Google Dialer
 TARGET_INCLUDE_AOSP_REPLACEMENT := true
 
-Some KangOS stuff
+# Some KangOS stuff
 TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_INCLUDE_PIXEL_CHARGER := true
 KANGOS_MAINTAINER := zSnowDark(@DefaultioX)
